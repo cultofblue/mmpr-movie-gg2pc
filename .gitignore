@@ -1,0 +1,17 @@
+# The ROM and everything derived from the game's code stay local
+*.gg
+rom/
+disasm/
+generated/*
+!generated/README.md
+bin/
+release/
+build*/
+
+# runtime files
+saves/
+settings.ini
+recomp_misses.txt
+
+__pycache__/
+*.pyc

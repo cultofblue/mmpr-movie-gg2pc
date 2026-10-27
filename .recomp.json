@@ -1,0 +1,36 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Mighty Morphin Power Rangers: The Movie",
+  "system": "GG",
+  "type": "recomp",
+  "original": {
+    "region": "USA, Europe, Brazil",
+    "serial": "2564",
+    "sha1": "dfe7dc7b2df143da4f4eeb32051a6d373dddba5d"
+  },
+  "project": "MMPR The Movie GG2PC",
+  "status": "released",
+  "targets": ["Windows"],
+  "toolchain": "Custom (Python Z80 static recompiler + C/SDL2 runtime)",
+  "approach": "Static ahead-of-time translation of the Game Gear Z80 code to C, one function per entry point, with cycle-exact scheduling that keeps it bit-identical to a reference interpreter; entry points from bank-aware static tracing plus interpreter coverage playthroughs, with zero interpreter fallback",
+  "maintainers": [
+    { "name": "cultofblue", "link": "https://github.com/cultofblue" }
+  ],
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/cultofblue/mmpr-movie-gg2pc" },
+    { "label": "Releases", "url": "https://github.com/cultofblue/mmpr-movie-gg2pc/releases" }
+  ],
+  "tags": [
+    "z80",
+    "static-recompilation",
+    "zero-interpreter-fallback",
+    "differential-testing",
+    "save-states",
+    "crt-filter",
+    "lcd-ghosting",
+    "fast-forward",
+    "controller",
+    "cheats"
+  ],
+  "notes": "Full playthroughs to the ending on Windows with no interpreter fallback. The recompiled code matches a reference Z80 interpreter (zexdoc/zexall 67/67) bit for bit: RAM, VRAM, palette and every frame, compared each frame across 400,000+ frames of scripted play. Runtime: Game Gear VDP (Mode 4, line interrupts, 160x144 viewport), SN76489 PSG with GG stereo, Sega mapper. Features: 10 save-state slots that replay frame-exact, LCD and CRT filters, fast-forward, infinite-health toggle, keyboard and controller. Release builds are ROM-less; the user supplies the ROM (CRC32 B47C19E5)."
+}

@@ -1,0 +1,73 @@
+{
+  "_comment": "Hand-found facts the static tracer cannot infer. bank = physical ROM bank, addr = CPU address.",
+  "table_fetch_helpers": [
+    {
+      "bank": 0,
+      "addr": 40,
+      "note": "rst 28h: hl = word[hl + 2*a]"
+    },
+    {
+      "bank": 15,
+      "addr": 33916,
+      "note": "sound driver copy of the same helper ($847C)"
+    }
+  ],
+  "manual_tables": [
+    {
+      "bank": 0,
+      "addr": 2341,
+      "slot2": null,
+      "note": "$0925 graphics-decoder opcode handlers, dispatched by jp (hl) at $0919"
+    },
+    {
+      "bank": 15,
+      "addr": 34692,
+      "slot2": 15,
+      "note": "$8784 sound-driver command handlers ($E0+), jp (hl) at $877F"
+    }
+  ],
+  "extra_entries": [
+    {
+      "bank": 1,
+      "addr": 25196,
+      "note": "ending sequence (found in a full playthrough)"
+    },
+    {
+      "bank": 1,
+      "addr": 26495,
+      "note": "ending/credits"
+    },
+    {
+      "bank": 0,
+      "addr": 12965,
+      "note": "end-of-game routine"
+    },
+    {
+      "bank": 0,
+      "addr": 13035,
+      "note": "end-of-game routine (P1, ix=$C900)"
+    },
+    {
+      "bank": 0,
+      "addr": 13067,
+      "note": "end-of-game routine"
+    },
+    {
+      "bank": 0,
+      "addr": 13129,
+      "note": "end-of-game routine (P2, ix=$C980)"
+    }
+  ],
+  "not_code": [
+    {
+      "bank": 15,
+      "addr": 35201,
+      "note": "$8981 is a pointer table; sound cmds $EF/$F1 point at it but are never issued"
+    }
+  ],
+  "api_vector": {
+    "start": 512,
+    "count": 52,
+    "note": "$0200-$0299: 52 'jp' stubs = kernel API used by banked modules (banks 4/5)"
+  }
+}

@@ -1,0 +1,26 @@
+#include <winver.h>
+IDI_ICON1 ICON "icon.ico"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "FileDescription",  "MMPR: The Movie (Game Gear) - native PC recompilation"
+      VALUE "FileVersion",      "1.0.0"
+      VALUE "ProductName",      "MMPR The Movie GG2PC"
+      VALUE "ProductVersion",   "1.0.0"
+      VALUE "OriginalFilename", "mmpr_movie_gg.exe"
+      VALUE "Comments",         "Requires your own copy of the Game Gear ROM."
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END
